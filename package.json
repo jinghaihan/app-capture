@@ -2,7 +2,7 @@
   "name": "app-capture",
   "type": "module",
   "version": "0.0.0-alpha.0",
-  "packageManager": "pnpm@10.33.0",
+  "packageManager": "pnpm@10.33.2",
   "description": "A CLI that collects HTTP, WebSocket, network, logs, and screenshots into a unified timeline for analyzing app behavior.",
   "author": "jinghaihan",
   "license": "MIT",
