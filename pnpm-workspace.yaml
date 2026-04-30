@@ -1,0 +1,35 @@
+packages: []
+catalogs:
+  build:
+    tsdown: ^0.21.9
+  dev:
+    '@antfu/utils': ^9.3.0
+    bumpp: ^11.0.1
+    pncat: ^0.11.1
+    simple-git-hooks: ^2.13.1
+    taze: ^19.11.0
+    tsx: ^4.21.0
+    typescript: ^6.0.2
+  inlined:
+    get-port: ^7.2.0
+    kill-port: ^2.0.1
+    tildify: ^3.0.0
+  lint:
+    '@octohash/eslint-config': ^0.3.1
+    eslint: ^10.2.0
+    lint-staged: ^16.4.0
+  prod:
+    '@clack/prompts': ^1.2.0
+    ansis: ^4.2.0
+    cac: ^7.0.0
+    pathe: ^2.0.3
+    tinyexec: ^1.1.2
+    unconfig: ^7.5.0
+  test:
+    vitest: ^4.1.4
+  types:
+    '@types/kill-port': ^2.0.3
+    '@types/node': ^25.6.0
+onlyBuiltDependencies:
+  - esbuild
+  - simple-git-hooks

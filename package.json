@@ -1,0 +1,81 @@
+{
+  "name": "app-capture",
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "pnpm@10.33.0",
+  "description": "A CLI that collects HTTP, WebSocket, network, logs, and screenshots into a unified timeline for analyzing app behavior.",
+  "author": "jinghaihan",
+  "license": "MIT",
+  "homepage": "https://github.com/jinghaihan/app-capture#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jinghaihan/app-capture.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jinghaihan/app-capture/issues"
+  },
+  "keywords": [],
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./cli": "./dist/cli.mjs",
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.mts",
+  "bin": {
+    "app-capture": "./bin/cli.mjs"
+  },
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "scripts": {
+    "start": "tsx ./src/cli.ts",
+    "build": "tsdown",
+    "deps": "taze major -I",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "release": "bumpp",
+    "bootstrap": "pnpm install",
+    "prepare": "simple-git-hooks",
+    "prepublishOnly": "pnpm build"
+  },
+  "dependencies": {
+    "@clack/prompts": "catalog:prod",
+    "ansis": "catalog:prod",
+    "cac": "catalog:prod",
+    "pathe": "catalog:prod",
+    "tinyexec": "catalog:prod",
+    "unconfig": "catalog:prod"
+  },
+  "devDependencies": {
+    "tsdown": "catalog:build",
+    "@antfu/utils": "catalog:dev",
+    "bumpp": "catalog:dev",
+    "pncat": "catalog:dev",
+    "simple-git-hooks": "catalog:dev",
+    "taze": "catalog:dev",
+    "tsx": "catalog:dev",
+    "typescript": "catalog:dev",
+    "get-port": "catalog:inlined",
+    "kill-port": "catalog:inlined",
+    "tildify": "catalog:inlined",
+    "@octohash/eslint-config": "catalog:lint",
+    "eslint": "catalog:lint",
+    "lint-staged": "catalog:lint",
+    "vitest": "catalog:test",
+    "@types/kill-port": "catalog:types",
+    "@types/node": "catalog:types"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  },
+  "inlinedDependencies": {
+    "get-port": "7.2.0",
+    "kill-port": "2.0.1",
+    "shell-exec": "1.0.2"
+  }
+}
