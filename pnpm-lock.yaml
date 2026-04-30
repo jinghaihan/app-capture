@@ -10,9 +10,6 @@ catalogs:
       specifier: ^0.21.10
       version: 0.21.10
   dev:
-    '@antfu/utils':
-      specifier: ^9.3.0
-      version: 9.3.0
     bumpp:
       specifier: ^11.0.1
       version: 11.0.1
@@ -32,6 +29,9 @@ catalogs:
       specifier: ^6.0.3
       version: 6.0.3
   inlined:
+    '@antfu/utils':
+      specifier: ^9.3.0
+      version: 9.3.0
     get-port:
       specifier: ^7.2.0
       version: 7.2.0
@@ -106,7 +106,7 @@ importers:
         version: 7.5.0
     devDependencies:
       '@antfu/utils':
-        specifier: catalog:dev
+        specifier: catalog:inlined
         version: 9.3.0
       '@octohash/eslint-config':
         specifier: catalog:lint

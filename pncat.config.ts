@@ -4,7 +4,13 @@ export default defineConfig({
   catalogRules: mergeCatalogRules([
     {
       name: 'inlined',
-      match: ['get-port', 'kill-port', 'tildify'],
+      /// keep-sorted
+      match: [
+        '@antfu/utils',
+        'get-port',
+        'kill-port',
+        'tildify',
+      ],
       priority: 0,
     },
   ]),

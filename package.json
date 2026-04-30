@@ -55,13 +55,13 @@
   },
   "devDependencies": {
     "tsdown": "catalog:build",
-    "@antfu/utils": "catalog:dev",
     "bumpp": "catalog:dev",
     "pncat": "catalog:dev",
     "simple-git-hooks": "catalog:dev",
     "taze": "catalog:dev",
     "tsx": "catalog:dev",
     "typescript": "catalog:dev",
+    "@antfu/utils": "catalog:inlined",
     "get-port": "catalog:inlined",
     "kill-port": "catalog:inlined",
     "tildify": "catalog:inlined",
@@ -79,6 +79,7 @@
     "*": "eslint --fix"
   },
   "inlinedDependencies": {
+    "@antfu/utils": "9.3.0",
     "get-port": "7.2.0",
     "kill-port": "2.0.1",
     "shell-exec": "1.0.2",

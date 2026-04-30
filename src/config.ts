@@ -1,5 +1,6 @@
 import type { CommandOptions, ConfigOptions, Options } from './types'
 import process from 'node:process'
+import { toArray } from '@antfu/utils'
 import { createConfigLoader } from 'unconfig'
 import { DEFAULT_OPTIONS } from './constants'
 
@@ -11,17 +12,6 @@ function normalizeConfig(options: Partial<CommandOptions>) {
   delete (options as Partial<CommandOptions> & { '--'?: string[] })['--']
 
   return options
-}
-
-function normalizeList(value: string | string[] | undefined): string[] {
-  if (!value)
-    return []
-
-  const values = Array.isArray(value) ? value : [value]
-
-  return values
-    .map(item => item.trim())
-    .filter(Boolean)
 }
 
 export async function readConfig(options: Partial<ConfigOptions>) {
@@ -46,9 +36,9 @@ export async function resolveConfig(options: Partial<CommandOptions>): Promise<O
   const configOptions = await readConfig(options)
   const merged = { ...defaults, ...configOptions, ...options }
 
-  merged.processNames = normalizeList(merged.processNames)
-  merged.hosts = normalizeList(merged.hosts)
-  merged.paths = normalizeList(merged.paths)
+  merged.processNames = toArray(merged.processNames)
+  merged.hosts = toArray(merged.hosts)
+  merged.paths = toArray(merged.paths)
 
   return merged as Options
 }
