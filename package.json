@@ -1,7 +1,7 @@
 {
   "name": "app-capture",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.0.0-alpha.0",
   "packageManager": "pnpm@10.33.0",
   "description": "A CLI that collects HTTP, WebSocket, network, logs, and screenshots into a unified timeline for analyzing app behavior.",
   "author": "jinghaihan",
@@ -14,7 +14,12 @@
   "bugs": {
     "url": "https://github.com/jinghaihan/app-capture/issues"
   },
-  "keywords": [],
+  "keywords": [
+    "macos",
+    "ios",
+    "app",
+    "capture"
+  ],
   "exports": {
     ".": "./dist/index.mjs",
     "./cli": "./dist/cli.mjs",
@@ -76,6 +81,7 @@
   "inlinedDependencies": {
     "get-port": "7.2.0",
     "kill-port": "2.0.1",
-    "shell-exec": "1.0.2"
+    "shell-exec": "1.0.2",
+    "tildify": "3.0.0"
   }
 }
